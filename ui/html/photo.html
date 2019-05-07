@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <title>OwlEye</title>
     <style>
         body {
             background-color: rgb(63, 81, 181);
@@ -10,26 +12,8 @@
             overflow: hidden;
         }
 
-        textarea {
-            width: 90%;
-            height: 200px;
-
-            margin: 20vh 5% 16px;
-            padding: 8px;
-
-            background-color: transparent;
-            box-sizing: border-box;
-
-            resize: none;
-            outline: none;
-
-            border-top-style: none;
-            border-left-style: none;
-            border-right-style: none;
-            border-bottom-color: #D50000;
-            border-bottom-width: 2px;
-
-            font-size: 1.2em;
+        input#file {
+            display: none;
         }
 
         .button {
@@ -56,13 +40,20 @@
         function back() {
             history.back()
         }
+
+        function choosePhoto() {
+            document.getElementById("file").click()
+        }
+
+        function photoChange(ele) {
+
+        }
     </script>
-    <meta charset="UTF-8">
-    <title>OwlEye</title>
 </head>
 <body>
-    <textarea placeholder="Write down your description here"></textarea>
-    <div class="button" onclick="jumpPhoto()">Select Photos</div>
+    <div class="button" onclick="choosePhoto()">Choose Photo</div>
     <div class="button" onclick="back()">Go Back</div>
+    <!-- hidden form -->
+    <input type="file" id="file" accept="image/*" multiple onchange="photoChange(this)">
 </body>
 </html>
