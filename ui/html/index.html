@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        body {
+            background-color: rgb(63, 81, 181);
+
+            font-family: sans-serif;
+
+            overflow: hidden;
+        }
+
+        .welcome_title {
+            width: 100vw;
+            height: 200px;
+
+            box-sizing: border-box;
+
+            text-align: center;
+            line-height: 200px;
+            font-weight: bold;
+            font-size: 2em;
+            color: white;
+        }
+
+        .button_container {
+            width: 100vw;
+            height: calc(100vh - 200px);
+
+            display: flex;
+            align-items: center;
+        }
+
+        .button {
+            width: 200px;
+            height: 50px;
+
+            margin-left: auto;
+            margin-right: auto;
+
+            color: white;
+            font-size: 1.2em;
+            line-height: 50px;
+            text-align: center;
+
+            background-color: #D50000;
+            box-shadow: 0 2px 2px 0 rgba(0,0,0,.14), 0 3px 1px -2px rgba(0,0,0,.2), 0 1px 5px 0 rgba(0,0,0,.12);
+
+            cursor: pointer;
+        }
+    </style>
+    <meta charset="UTF-8">
+    <title>OwlEye</title>
+</head>
+<body>
+    <div class="welcome_title">
+        Welcome to OwlEye!
+    </div>
+    <div class="button_container">
+        <div class="button" onclick="jumpInput()">Start Describing</div>
+    </div>
+</body>
+</html>
