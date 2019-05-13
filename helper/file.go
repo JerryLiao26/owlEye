@@ -4,9 +4,11 @@ import (
 	"fmt"
 	"io/ioutil"
 	"net/url"
+	"os"
 	"path/filepath"
 )
 
+/* Private Methods */
 func getAbsPath(path string) string {
 	fullPath, err := filepath.Abs(path)
 
@@ -17,6 +19,18 @@ func getAbsPath(path string) string {
 	return fullPath
 }
 
+func checkFileExist(path string) bool {
+	path = getAbsPath(path)
+	_, err := os.Stat(path)
+
+	if err != nil && os.IsNotExist(err) {
+		return false
+	}
+
+	return true
+}
+
+/* Public methods */
 func ReadLocalFile(path string) []byte {
 	path = getAbsPath(path)
 	b, err := ioutil.ReadFile(path)
@@ -41,4 +55,9 @@ func ReadAsHtml(path string) string {
 	fileStream := string(ReadLocalFile(path))
 
 	return "data:text/html," + url.PathEscape(fileStream)
+}
+
+func GetHomePath() string {
+	path, _ := os.UserHomeDir()
+	return path
 }
