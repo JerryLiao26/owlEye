@@ -2,7 +2,6 @@ package ui
 
 import (
 	"github.com/JerryLiao26/owlEye/helper"
-	"github.com/JerryLiao26/owlEye/server"
 	"github.com/zserge/lorca"
 )
 
@@ -35,8 +34,8 @@ func ConfigUI() {
 			// Save config
 			helper.SaveConf()
 
-			// Restart server in goroutine
-			go server.StopServers(true)
+			// Test server in goroutine
+			go helper.TestServer()
 
 			_ = ui.Close()
 		})

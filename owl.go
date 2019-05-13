@@ -1,13 +1,13 @@
 package main
 
 import (
-	"github.com/JerryLiao26/owlEye/server"
+	"github.com/JerryLiao26/owlEye/helper"
 	"github.com/JerryLiao26/owlEye/ui"
 )
 
 func main() {
-	// Init server in goroutine
-	go server.StartServer()
+	// Test server in goroutine
+	go helper.TestServer()
 
 	// Init UI
 	ui.StartUI()

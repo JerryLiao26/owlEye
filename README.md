@@ -10,5 +10,6 @@ Enter a piece of description, and ```owlEye``` will pick the target image for yo
 - ```owlEye``` uses [lorca](https://github.com/zserge/lorca) as HTML UI wrapper, therefore you will need Chrome/Chromium >= 70 installed on your system.
 - ```owlEye``` gets user's home directory with ```os.UserHomeDir()``` introduced in Go 1.12 so the Go version is also limited.
 
-## To-dos
-- [ ] Use of external servers(text, image processing)
+## External Servers
+For convenience of using Machine Learning models, ```owlEye``` does not build internal processing servers. You have to run compatible ones yourself then configure ```owlEye``` to run with them. Demos are listed below:
+- [owlEye-text-server](https://github.com/JerryLiao26/owlEye-text-server)
