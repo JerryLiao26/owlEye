@@ -56,13 +56,19 @@
         function back() {
             history.back()
         }
+
+        function next() {
+            const text = document.getElementById('input').value;
+
+            jumpPhoto(text);
+        }
     </script>
     <meta charset="UTF-8">
     <title>OwlEye</title>
 </head>
 <body>
-    <textarea placeholder="Write down your description here"></textarea>
-    <div class="button" onclick="jumpPhoto()">Select Photos</div>
+    <textarea id="input" placeholder="Write down your description here"></textarea>
+    <div class="button" onclick="next()">Select Photos</div>
     <div class="button" onclick="back()">Go Back</div>
 </body>
 </html>

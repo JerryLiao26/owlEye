@@ -33,8 +33,11 @@ func StartUI() {
 			_ = ui.Load(inputHtml)
 		})
 
-		_ = ui.Bind("jumpPhoto", func() {
+		_ = ui.Bind("jumpPhoto", func(text string) {
 			photoHtml := helper.ReadAsHtml("./ui/html/photo.html")
+
+			// Handle text
+			helper.PostTextServer(text)
 
 			_ = ui.Load(photoHtml)
 		})
